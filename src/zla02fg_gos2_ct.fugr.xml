@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>FG for GOS atttach</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZLA02FG_GOS2_CTTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZLA02FG_GOS2_CT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZLA02_RFC_SO_CT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>RFC Attach with cl</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOC_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>AUART</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_SALES_ORG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>VKORG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DISTR_CHAN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>VTWEG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DIVISION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SPART</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_SOLD_TO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>KUNNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TEST_RUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILENAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>GOS_S_ATTCONT-FILENAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILE_EXTENSION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>GOS_S_ATTCONT-TECH_TYPE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILE_BASE64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SALESDOC</PARAMETER>
+       <TYP>VBELN_VA</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_ATTACH_RESULT</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOC_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Document Type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_SALES_ORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Organization</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DISTR_CHAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Document Type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DIVISION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Organization</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_SOLD_TO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Distribution Channel</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TEST_RUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Division</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILENAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Customer Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILE_EXTENSION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GOS API: Structure for Attachment and Content</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILE_BASE64</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SALESDOC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Document</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ATTACH_RESULT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_GOS_ATTACH_FILE_CT</FUNCNAME>
+     <SHORT_TEXT>Attach file to SO</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_OBJECT_TYPE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SIBFBORIID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILENAME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>GOS_S_ATTCONT-FILENAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILE_EXTENSION</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>GOS_S_ATTCONT-TECH_TYPE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FILE_BASE64</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_SALES_DOC_ID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>VBELN_VA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DECODE_ERROR</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>GOS_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_OBJECT_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object Type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILENAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>File Name of Browser Item (Display Attribute)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILE_EXTENSION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Type Information for Browser Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FILE_BASE64</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_SALES_DOC_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sales Document</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DECODE_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Erros decoding file</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>GOS_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Gos error</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
